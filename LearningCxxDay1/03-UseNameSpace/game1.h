@@ -1,0 +1,8 @@
+//
+// Created by 娄尚 on 2020/7/12.
+//
+
+#ifndef LEARNINGCXXDAY1_GAME1_H
+#define LEARNINGCXXDAY1_GAME1_H
+
+#endif //LEARNINGCXXDAY1_GAME1_H
