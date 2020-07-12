@@ -1,0 +1,11 @@
+// the configured options and settings for main.c
+#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
+
+//通过在 TutorialConfig.h.in 中添加如下配置，Cmake 将这个变量引入到源代码中：
+//通过 option 定义的变量，需要这么引用!
+#cmakedefine USE_MYMATH
+
+// does the platform provide exp and log functions?
+#cmakedefine HAVE_LOG
+#cmakedefine HAVE_EXP
