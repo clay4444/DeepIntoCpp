@@ -1,4 +1,6 @@
-//
-// Created by 娄尚 on 2020/7/12.
-//
+#include "game1.h"
 
+void KingGlory::goAtk()
+{
+    cout << "王者荣耀攻击实现" << endl;
+}

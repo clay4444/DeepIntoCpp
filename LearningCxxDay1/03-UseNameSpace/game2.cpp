@@ -1,4 +1,7 @@
-//
-// Created by 娄尚 on 2020/7/12.
-//
+#include "game2.h"
 
+void  LOL::goAtk()
+{
+    cout << "LOL攻击实现" << endl;
+
+}

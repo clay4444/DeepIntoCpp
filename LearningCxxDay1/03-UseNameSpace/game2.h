@@ -2,7 +2,7 @@
 using namespace std;
 
 
-namespace KingGlory
+namespace LOL
 {
     void goAtk();
 }
