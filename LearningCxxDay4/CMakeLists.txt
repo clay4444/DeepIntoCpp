@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.16)
+project(LearningCxxDay4)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(LearningCxxDay4-1 01-StaticFieldAndMethod/StaticFieldAndMethod.cpp)
+add_executable(LearningCxxDay4-2-1 02-Sington/ChainMan.cpp)
+add_executable(LearningCxxDay4-2-2 02-Sington/Printer.cpp)
+add_executable(LearningCxxDay4-3 03-ObjectFieldAndMethodStore/ObjectFieldAndMethodStore.cpp)
+add_executable(LearningCxxDay4-4 04-ThisPoint/ThisPoint.cpp)
+add_executable(LearningCxxDay4-5 05-VoidPointVisitObject/VoidPointVisitObject.cpp)
+add_executable(LearningCxxDay4-6 06-ConstFunctionAndObject/ConstFunctionAndObject.cpp)
+add_executable(LearningCxxDay4-7-1 07-Tomomoto/TomomotoGlobalFunction.cpp)
+add_executable(LearningCxxDay4-7-2 07-Tomomoto/TomomotoClass.cpp)
+add_executable(LearningCxxDay4-7-3 07-Tomomoto/TomomotoClassFunction.cpp)
