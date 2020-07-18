@@ -23,7 +23,7 @@ private:
     static  ChairMan * singleMan;   //类内声明  类外初始化
 };
 
-//类内声明，类外初始化！
+//类内声明，类外初始化！ 注意：这里记住加了ChairMan::命名空间 就代表是在类内部做的操作了！
 ChairMan *  ChairMan::singleMan = new ChairMan;
 
 void test01()
