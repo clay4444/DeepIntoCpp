@@ -9,3 +9,5 @@ add_executable(LearningCxxDay5-3 03-ShiftLeftOperatorOverload/ShiftLeftOperator.
 add_executable(LearningCxxDay5-4 04-IncrementOeratorOverload/IncrementOeratorOverload.cpp)
 add_executable(LearningCxxDay5-5 05-PointOperatorOverload/PointOperatorOverload.cpp)
 add_executable(LearningCxxDay5-6 06-AssignmentOperatorOverload/AssignmentOperatorOverload.cpp)
+add_executable(LearningCxxDay5-7 07-RelationshipOperatorOverload/RelationshipOperatorOverload.cpp)
+add_executable(LearningCxxDay5-8 08-FunctionInvokeOverload/FunctionInvokeOverload.cpp)
