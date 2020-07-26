@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 
+/**
+ * 常量引用！
+ */
 void test01()
 {
     //int &ref = 10;  //不可以
@@ -11,7 +14,7 @@ void test01()
     int *p = (int *)&ref;
     *p = 10000;
 
-    cout << ref << endl;
+    cout << ref << endl;  //10000
 }
 
 void showValue(const int &a)
@@ -29,7 +32,7 @@ void test02()
 
 int main(){
 
-    //test01();
-    test02();
+    test01();
+    //test02();
     return EXIT_SUCCESS;
 }
