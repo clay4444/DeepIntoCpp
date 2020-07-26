@@ -11,7 +11,7 @@ void testFunc(int& ref)  //发现是引用，转换为 int* const ref = &a;
 void referenceNature()
 {
     int a = 10;
-    int& aRef = a;  //自动转换为 int* const aRef = &a; 这也能说明为什么必须初始化
+    int& aRef = a;  //自动转换为 int* const aRef = &a; 这也能说明为什么必须初始化, 因为被const修饰了，const修饰的变量必须创建时就初始化！
     aRef = 20;  //内部发现aRef是引用，自动转换为  *Ref = 20;
     cout << " a = " << a << endl;
     cout << " aRef = " << aRef << endl;
