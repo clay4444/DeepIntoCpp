@@ -59,6 +59,13 @@ void test01()
 //{
 //	cout << "myfunc(int a )调用" << endl;
 //}
+
+/**
+ * 下面两个函数可以同时存在，原因：
+ * 1. int a = 10; myFunc(a); 会调用第一个函数，因为此时a是一个变量；
+ * 2. 如果直接myFunc(10) 会调用第二个函数，因为第一个函数 int & a = 10； a指向了不合法的地址；
+ * 而const int &a = 10是合法的，这是常量引用，相当于创建了一个临时变量！   复习看第一天最后一节
+ */
 void myFunc(int &a) // int & a  = 10;         不会调用这个方法，因为a指向了一块不合法的地址空间
 {
     cout << "myfunc(int &a )调用" << endl;
@@ -97,6 +104,5 @@ int main(){
     //test01();
     test02();
 
-    system("pause");
     return EXIT_SUCCESS;
 }
