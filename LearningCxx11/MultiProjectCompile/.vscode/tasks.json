@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // 通过 task.json 来编译 active file，  这个文件的目的就是配置如何编译， 然后生成一个二进制文件
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",   //shell 方式
+        "label": "clang++ build active file",   //debug的时候会执行这个task
+        "command": "/usr/bin/clang++", //  执行的命令
+        "args": [     //clang++的参数
+          "-std=c++17",  //使用 c++ 17 的标准
+          "-stdlib=libc++", //
+          "-g",
+          "${workspaceFolder}/*.cpp",  // 只编译active file，  ${workspaceFolder}/*.cpp 会编译当前目录下所有的cpp文件
+          "-o",  //指定编译完之后的文件名
+          "${fileDirname}/${fileBasenameNoExtension}"  // ${workspaceFolder}/myProgram.out  更改编译之后的文件名
+        ],
+        "options": {
+          "cwd": "${workspaceFolder}"  // 指定 helloworld.cpp 源文件所在的目录
+        },
+        "problemMatcher": ["$gcc"],   //查找错误和warning的解析器   静态编译？
+        "group": {
+          "kind": "build",
+          "isDefault": true  //当按下 shift+command+b 的时候，会自动执行编译，仅仅是为了方便
+        }
+      }
+    ]
+  }

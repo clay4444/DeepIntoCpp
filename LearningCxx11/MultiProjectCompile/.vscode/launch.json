@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // debug 用的
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "clang++ - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        // g++ -g 生成的调试用目标文件名
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "args": [],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        // 调试器 比如 gdb
+        "MIMode": "lldb",
+        "preLaunchTask": "clang++ build active file"
+      }
+    ]
+  }
