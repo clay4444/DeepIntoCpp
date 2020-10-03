@@ -117,7 +117,7 @@ string& replace(int pos, int n, const char* s); //替换从pos开始的n个字�
 
 void test04()
 {
-    //拼接
+    //
     //string str1 = "我";
     //string str2 = "爱北京";
 

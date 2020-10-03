@@ -36,5 +36,6 @@ int test2()
 int main()
 {
   //test1();
-  test2();
+  std::string str = "aaa";
+  std::cout << str.size() << std::endl;
 }
