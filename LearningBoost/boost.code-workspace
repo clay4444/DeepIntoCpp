@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "smartPointer"
+		},
+		{
+			"path": "stateMachine"
 		}
 	],
 	"settings": {
