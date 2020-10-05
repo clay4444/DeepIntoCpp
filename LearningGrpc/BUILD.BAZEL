@@ -1,0 +1,47 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_proto_library")
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
+
+# pb文件
+proto_library(
+    name = "helloworld_proto",
+    srcs = ["helloworld.proto"],
+)
+
+# c++ 对应的pb
+cc_proto_library(
+    name = "helloworld_cc_proto",
+    deps = [":helloworld_proto"],   #依赖定义的pb文件
+)
+
+# c++ 对应的grpc
+cc_grpc_library(
+    name = "helloworld_cc_grpc",
+    srcs = [":helloworld_proto"],   # src对应的是 pb文件
+    grpc_only = True,
+    deps = [":helloworld_cc_proto"], # deps 对应的是 c++ 编译完之后的pb
+)
+
+cc_binary(
+    name = "greeter_client",
+    srcs = ["greeter_client.cc"],
+    defines = ["BAZEL_BUILD"],
+    deps = [
+        ":helloworld_cc_grpc",   # 依赖定义的grpc
+        # http_archive made this label available for binding
+        "@com_github_grpc_grpc//:grpc++",
+    ],
+)
+
+cc_binary(
+    name = "greeter_server",
+    srcs = ["greeter_server.cc"],
+    defines = ["BAZEL_BUILD"],
+    deps = [
+        ":helloworld_cc_grpc",
+        # http_archive made this label available for binding
+        "@com_github_grpc_grpc//:grpc++",
+    ],
+)
