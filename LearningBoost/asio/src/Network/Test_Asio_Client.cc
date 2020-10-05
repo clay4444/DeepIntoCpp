@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 
-boost::asio::io_service io_service;
-boost::asio::ip::tcp::resolver resolver(io_service);
-boost::asio::ip::tcp::socket sock(io_service);
+boost::asio::io_service io_service;  // io服务
+boost::asio::ip::tcp::resolver resolver(io_service);  // io对象，用来解析域名
+boost::asio::ip::tcp::socket sock(io_service);    // io对象，用来建立链接
 boost::array<char, 4096> buffer;
 
 void read_handler(const boost::system::error_code &ec, std::size_t bytes_transferred)  //准确的字节数
@@ -36,6 +36,6 @@ void read_handler(const boost::system::error_code &ec, std::size_t bytes_transfe
  int main() 
  { 
    boost::asio::ip::tcp::resolver::query query("www.baidu.com", "80"); 
-   resolver.async_resolve(query, resolve_handler);   //解析
+   resolver.async_resolve(query, resolve_handler);   //解析ip
    io_service.run(); 
  } 
